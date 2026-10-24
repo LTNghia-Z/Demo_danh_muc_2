@@ -1,0 +1,81 @@
+/* --- Global Smooth Scroll --- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- Card Interactive Hover Effect --- */
+.custom-card {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* --- Accessibility: Visible Form Focus --- */
+.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* ========================================================
+   FEATURE 1: REDUCED MOTION (Accessibility)
+   ======================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .custom-card {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* ========================================================
+   FEATURE 2: ACCESSIBLE DARK THEME OVERRIDE
+   ======================================================== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #f1f1f1;
+  }
+
+  .hero-area,
+  .contact-area {
+    background-color: #1a1a1a !important;
+  }
+
+  .hero-area h1 {
+    color: #ffffff !important;
+  }
+
+  .hero-area p {
+    color: #cccccc !important;
+  }
+
+  .custom-card,
+  .form-box {
+    background-color: #242424 !important;
+    border-color: #383838 !important;
+    color: #f1f1f1 !important;
+  }
+
+  .card-text {
+    color: #b0b0b0 !important;
+  }
+
+  .form-control {
+    background-color: #2d2d2d;
+    border-color: #444444;
+    color: #ffffff;
+  }
+
+  .form-control:focus {
+    background-color: #333333;
+    color: #ffffff;
+  }
+}
